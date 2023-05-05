@@ -11,13 +11,13 @@
 	<nav id="navbar" class="flex flex-row p-4">
 		<ul id="links" class="flex flex-row grow gap-5">
 			<li>
-				<a href="/" class="text-[#2A2F4F] font-bold text-3xl hover:underline">Home</a>
+				<a href="/" class="text-[#2A2F4F] font-bold text-2xl hover:underline">Home</a>
 			</li>
 			<li>
-				<a href="/create" class="text-[#2A2F4F] font-bold text-3xl hover:underline">Create</a>
+				<a href="/create" class="text-[#2A2F4F] font-bold text-2xl hover:underline">Create</a>
 			</li>
 			<li>
-				<a href="/mybookings" class="text-[#2A2F4F] font-bold text-3xl hover:underline">My bookings</a>
+				<a href="/mybookings" class="text-[#2A2F4F] font-bold text-2xl hover:underline">My bookings</a>
 			</li>
 		</ul>
 		<div id="logo">
