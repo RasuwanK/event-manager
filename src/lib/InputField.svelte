@@ -1,7 +1,7 @@
 <script lang="ts">
 
   // All the props related to the component
-	export let type: 'text' | 'number' | 'date' | 'textarea';
+	export let type: 'text' | 'number' | 'date' | 'textarea' | 'email';
 	export let value: string = '';
 	export let name: string;
 	export let isRequired: boolean = false;
