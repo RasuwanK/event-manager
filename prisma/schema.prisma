@@ -20,7 +20,7 @@ model Event {
   addedDate DateTime @default(now()) @map("added_date")
   contactEmail String @map("contact_email")
   label String?
-  organizors String
+  organizer String
   description String
 }
 
