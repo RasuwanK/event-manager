@@ -1,5 +1,14 @@
 <script lang="ts">
-  import InputField from '$lib/InputField.svelte';
+	import InputField from '$lib/InputField.svelte';
+	
+  // Form field values
+  let name = '';
+  let participantLimit = '1';
+  let venue = '';
+  let date = '';
+  let contactEmail = '';
+  let organisor = '';
+  let description = '';
 </script>
 
 <div id="create-page" class="mt-4 p-2 flex flex-col items-center">
@@ -9,31 +18,67 @@
 		</header>
 		<form method="post" class="grid grid-cols-2">
 			<div class="cell">
-        <InputField />
+				<InputField
+					label="Name of the event"
+					type="text"
+					bind:value={name}
+					name="name"
+					isRequired={true}
+				/>
 			</div>
-			<div>
-				<label for="participantLimit">Participant limit</label>
-				<input id="participantLimit" name="participantLimit" type="number" required />
+			<div class="cell">
+				<InputField
+					label="Participant Limit"
+					type="number"
+					bind:value={participantLimit}
+					name="participantLimit"
+					isRequired={true}
+				/>
 			</div>
-			<div>
-				<label for="venue">Venue</label>
-				<input id="venue" name="venue" type="text" required />
+			<div class="cell">
+				<InputField
+					label="Venue"
+					type="text"
+					bind:value={venue}
+					name="venue"
+					isRequired={true}
+				/>
 			</div>
-			<div>
-				<label for="date">Date</label>
-				<input id="date" name="date" type="date" required />
+      <div class="cell">
+				<InputField
+					label="Date of the event"
+					type="date"
+					bind:value={date}
+					name="date"
+					isRequired={true}
+				/>
 			</div>
-			<div>
-				<label for="contactEmail">Contact email</label>
-				<input id="contactEmail" name="contactEmail" type="email" required />
+      <div class="cell">
+				<InputField
+					label="Contact email"
+					type="email"
+					bind:value={contactEmail}
+					name="contactEmail"
+					isRequired={true}
+				/>
 			</div>
-			<div>
-				<label for="organizor">Organizor</label>
-				<input id="organizor" name="organizor" type="text" />
+     <div class="cell">
+				<InputField
+					label="Organisor"
+					type="text"
+					bind:value={organisor}
+					name="organisor"
+					isRequired={true}
+				/>
 			</div>
-			<div class="col-start-1 col-end-3">
-				<label for="description">Description</label>
-				<textarea id="description" name="description" />
+     <div class="cell">
+				<InputField
+					label="Description"
+					type="textarea"
+					bind:value={description}
+					name="description"
+					isRequired={true}
+				/>
 			</div>
 		</form>
 	</div>
