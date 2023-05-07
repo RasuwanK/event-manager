@@ -4,7 +4,7 @@
 	export let name: string;
 </script>
 
-<div id="input-field-checkbox" class="w-full flex flex-row items-center">
-	<label for={name} class="text-sm select-none text-center">{label} </label>
+<div id="input-field-checkbox" class="flex flex-row items-center gap-2">	
 	<input type="checkbox" bind:checked={isChecked} id={name} {name} />
+  <label for={name} class="text-sm select-none text-center">{label} </label>
 </div>
