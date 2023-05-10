@@ -11,15 +11,14 @@ datasource db {
 }
 
 model Event {
-  id String @id
+  id String @id @default(cuid())
   name String 
   participantLimit Int @map("participant_limit")
-  bookings Int
+  bookings Int?
   venue String
   date DateTime
   addedDate DateTime @default(now()) @map("added_date")
   contactEmail String @map("contact_email")
-  label String?
   organizer String
   description String
 }
