@@ -1,8 +1,12 @@
 import { PrismaClient } from '@prisma/client';
+import { NODE_ENV } from '$env/static/private';
 
-// This is an instantiation of the prisma client
-const prisma = new PrismaClient({
-	log: ['query', 'error']
-});
+const prisma =
+	global.prisma ||
+	new PrismaClient({
+		log: ['query', 'error', 'info', 'warn']
+	});
+
+if (NODE_ENV === 'development') global.prisma = prisma;
 
 export default prisma;
