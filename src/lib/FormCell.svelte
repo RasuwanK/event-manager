@@ -31,7 +31,7 @@ const computedStyles = addUtilities([
 </script>
 
 <div
-	class={`cell ${computedStyles} `}
+	class={`cell ${computedStyles} flex flex-col`}
 >
 	<slot />
 </div>
