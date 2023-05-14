@@ -1,17 +1,16 @@
 <script lang="ts">
-  import {onMount} from "svelte";
+	import Button from "$lib/Button.svelte";
 
-  let data = [];
-
-  onMount(async () => {
-    const response = await fetch('/search-event');
-    let data = await response.json();
-  });
-  
 </script>
 <div id="home-page">
-  <form id="searchbox">
-
+  <form id="searchbox" method="post">
+    <select name="filter">
+      <option value="bydate">By Date</option>
+      <option value="byname">By name</option>
+      <option value="bylocation">By location</option>
+    </select>
+    <input type="search" />
+    <Button type="submit">Search</Button>
   </form>
   <ul id="eventlist">
     
