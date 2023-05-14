@@ -187,7 +187,7 @@
 				<InputField
 					value={form?.validationErrors?.price.value}
 					label="Price of the ticket"
-					type="number"
+					type="text"
 					name="price"
 					isRequired={true}
 				/>
