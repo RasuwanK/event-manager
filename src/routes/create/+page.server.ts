@@ -88,7 +88,7 @@ export const actions = {
 						contactEmail: contactEmail!,
 						organizer: organizer!,
 						description: description!,
-						price: price!
+						price: parseInt(price!)
 					}
 				});
 			} catch (e) {
