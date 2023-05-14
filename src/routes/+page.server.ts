@@ -32,6 +32,8 @@ export const actions = {
 						console.log(e);
 						return fail(500, {
 							success: false,
+							filter,
+							query,
 							result: []
 						});
 					}
@@ -56,6 +58,8 @@ export const actions = {
 						console.log(e);
 						return fail(500, {
 							success: false,
+							filter,
+							query,
 							result: []
 						});
 					}
@@ -81,6 +85,8 @@ export const actions = {
 						console.log(e);
 						return fail(500, {
 							success: false,
+							filter,
+							query,
 							result: []
 						});
 					}
@@ -89,13 +95,11 @@ export const actions = {
 					// Provided with wrong or empty filter
 					return fail(400, {
 						success: fail,
+						filter,
+						query,
 						result: []
 					});
 			}
-			return {
-				success: true,
-				result
-			};
 		} else {
 			// When user provides no query then all the records are sent
 			try {
@@ -115,11 +119,13 @@ export const actions = {
 				console.log(e);
 				return fail(500, {
 					success: false,
+					filter,
+					query,
 					result: []
 				});
 			}
 		}
 
-		return result;
+		return { success: true, result, filter, query };
 	}
 } satisfies Actions;
