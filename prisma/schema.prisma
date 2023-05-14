@@ -3,7 +3,7 @@
 
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch"] 
+  previewFeatures = ["fullTextSearch", "fullTextIndex"] 
 }
 
 datasource db {
@@ -22,6 +22,6 @@ model Event {
   contactEmail String @map("contact_email")
   organizer String
   description String
-  price Decimal
+  price Float 
 }
 
