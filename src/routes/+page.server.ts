@@ -7,14 +7,34 @@ export const actions = {
 		const submitData = await request.formData();
 		const filter = submitData.get('filter');
 		const query = submitData.get('query');
-		let result: unknown;
-		console.log(query);
+		let result;
 		if (query) {
 			// When user provides a query and a filter
 			switch (filter) {
 				case 'bydate':
-					result =
-						await prisma.$queryRaw`SELECT name, participant_limit, bookings, venue, date FROM Event WHERE date = '${query}';`;
+					try {
+						result = await prisma.event.findMany({
+							select: {
+								name: true,
+								participantLimit: true,
+								bookings: true,
+								venue: true,
+								date: true
+							},
+							where: {
+								date: {
+									gte: new Date(query as string).toISOString()
+								}
+							}
+						});
+						console.log(result);
+					} catch (e) {
+						console.log(e);
+						return fail(500, {
+							success: false,
+							result: []
+						});
+					}
 					break;
 				case 'byname':
 					try {
@@ -28,11 +48,10 @@ export const actions = {
 							},
 							where: {
 								name: {
-									contains: query
+									contains: query as string
 								}
 							}
 						});
-						console.log(result);
 					} catch (e) {
 						console.log(e);
 						return fail(500, {
@@ -52,8 +71,8 @@ export const actions = {
 								date: true
 							},
 							where: {
-								location: {
-									contains: query
+								venue: {
+									contains: query as string
 								}
 							}
 						});
@@ -100,6 +119,7 @@ export const actions = {
 				});
 			}
 		}
+
 		return result;
 	}
 } satisfies Actions;
