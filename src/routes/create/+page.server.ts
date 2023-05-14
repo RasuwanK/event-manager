@@ -15,6 +15,7 @@ export const actions = {
 		const participantLimit = submitData.get('participantLimit')?.toString();
 		const venue = submitData.get('venue')?.toString();
 		const agree = submitData.get('agree')?.toString();
+		const price = submitData.get('price')?.toString();
 
 		// All the pattern matchers used in validation
 		const dateMatcher = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
@@ -55,6 +56,10 @@ export const actions = {
 			agree: {
 				value: agree ? agree : '',
 				invalid: agree !== 'on' ? true : false
+			},
+			price: {
+				value: price ? price : '',
+				invalid: participantLimit ? !numbersMatcher.test(participantLimit) : true
 			}
 		};
 
@@ -82,11 +87,12 @@ export const actions = {
 						date: `${date!}T00:00:00.000Z`,
 						contactEmail: contactEmail!,
 						organizer: organizer!,
-						description: description!
+						description: description!,
+						price: price!
 					}
 				});
 			} catch (e) {
-        console.log(e);
+				console.log(e);
 				return fail(500, {
 					success: false,
 					validationErrors

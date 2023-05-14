@@ -151,6 +151,7 @@
 					isRequired={true}
 				/>
 			</FormCell>
+
 			<FormCell fullSpan={true}>
 				<div class="h-5">
 					{#if form?.validationErrors?.organizer.invalid}
@@ -164,10 +165,30 @@
 					{/if}
 				</div>
 				<InputField
-					value={form?.validationErrors?.organizer.value}
+					value={form?.validationErrors?.description.value}
 					label="Description"
 					type="textarea"
 					name="description"
+					isRequired={true}
+				/>
+			</FormCell>
+			<FormCell>
+				<div class="h-5">
+					{#if form?.validationErrors?.price.invalid}
+						<Error
+							name="price"
+							invalid={form?.validationErrors.price.invalid}
+							empty={form?.validationErrors.price.value ? false : true}
+							invalidMessage="Must only contain numbers"
+							emptyMessage="Fill out this field"
+						/>
+					{/if}
+				</div>
+				<InputField
+					value={form?.validationErrors?.price.value}
+					label="Price of the ticket"
+					type="number"
+					name="price"
 					isRequired={true}
 				/>
 			</FormCell>
