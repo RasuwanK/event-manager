@@ -21,5 +21,6 @@ model Event {
   contactEmail String @map("contact_email")
   organizer String
   description String
+  price Decimal
 }
 
