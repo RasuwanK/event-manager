@@ -27,7 +27,6 @@ export const actions = {
 								}
 							}
 						});
-						console.log(result);
 					} catch (e) {
 						console.log(e);
 						return fail(500, {
@@ -80,7 +79,6 @@ export const actions = {
 								}
 							}
 						});
-						console.log(result);
 					} catch (e) {
 						console.log(e);
 						return fail(500, {
