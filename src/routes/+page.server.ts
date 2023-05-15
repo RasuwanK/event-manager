@@ -8,6 +8,14 @@ export const actions = {
 		const filter = submitData.get('filter');
 		const query = submitData.get('query');
 		let result;
+
+		// When use provides empty filter
+		if (!filter)
+			return fail(400, {
+				success: false,
+				result: []
+			});
+
 		if (query) {
 			// When user provides a query and a filter
 			switch (filter) {
@@ -90,9 +98,9 @@ export const actions = {
 					}
 					break;
 				default:
-					// Provided with wrong or empty filter
+					// Provided with wrong filter
 					return fail(400, {
-						success: fail,
+						success: false,
 						filter,
 						query,
 						result: []
