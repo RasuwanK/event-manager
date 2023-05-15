@@ -1,11 +1,9 @@
 <script lang="ts">
   import {enhance} from '$app/forms';
   import searchSVG from '$lib/svgs/search.svg';
-  export let formValues: {
-    query: string,
-    filter: string
-  } | null;
-	let filter = formValues?.filter ? formValues?.filter : 'byname';
+  export let prevFilter: string | null | undefined; 
+  export let prevQuery: string | null | undefined;
+	let selectedFilter = prevFilter ? prevFilter : 'byname';
 </script>
 <form
 	id="searchbox"
@@ -13,7 +11,7 @@
 	use:enhance
 	class="self-center flex flex-row w-[50em] justify-stretch h-20"
 >
-	<select bind:value={filter} name="filter" class="bg-[#222222] text-white rounded-l-full p-4">
+	<select bind:value={selectedFilter} name="filter" class="bg-[#222222] text-white rounded-l-full p-4">
 		<option value="byname">By name </option>
 		<option value="bydate">By Date</option>
 		<option value="bylocation">By location</option>
@@ -25,8 +23,8 @@
 		<input
 			name="query"
 			placeholder="Search any event you want"
-			type={filter === 'bydate' ? 'date' : 'text'}
-			value={formValues?.query ? formValues?.query : ''}
+			type={prevFilter === 'bydate' ? 'date' : 'text'}
+			value={prevQuery ? prevQuery : ''}
 			class="outline-none grow px-3"
 		/>
 		<button
