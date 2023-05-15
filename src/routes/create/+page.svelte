@@ -172,7 +172,7 @@
 					isRequired={true}
 				/>
 			</FormCell>
-			<FormCell>
+			<FormCell fullSpan={true} isCentered={true}>
 				<div class="h-5">
 					{#if form?.validationErrors?.price.invalid}
 						<Error
