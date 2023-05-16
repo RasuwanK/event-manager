@@ -33,7 +33,7 @@ export const actions = {
 				return {
 					success: true,
 					filter: filter.toString(),
-					query: filter.toString(),
+					query: '',
 					result: []
 				};
 			} catch (e) {
