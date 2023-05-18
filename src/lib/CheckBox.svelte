@@ -6,5 +6,5 @@
 
 <div id="input-field-checkbox" class="flex flex-row items-center gap-2">	
 	<input type="checkbox" bind:checked={isChecked} id={name} {name} />
-  <label for={name} class="text-sm select-none text-center">{label} </label>
+  <label for={name} class="text-xs sm:text-sm select-none text-center">{label} </label>
 </div>
