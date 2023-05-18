@@ -7,7 +7,7 @@
 	export let form: ActionData;
 </script>
 
-<div id="home-page" class="flex flex-col w-full gap-4">
+<div id="home-page" class="flex flex-col w-full gap-8">
 	<header>
 		<h1 class="text-center text-4xl font-bold">Explore events</h1>
 	</header>
@@ -37,13 +37,13 @@
 									<span class="text-sm ml-auto bg-[#222222] text-white px-2 py-1 rounded-full">{bookedPrecentage}% sold</span>
 								</section>
 								<h3 class="text-xl font-bold my-2">{name}</h3>
-								<div id="info" class="flex flex-row items-center gap-1">
+								<div id="info" class="flex flex-row items-center gap-1 my-1">
 									<span id="icon"><img src={dateIcon} alt="Icon of a clock" width="16" height="16" /></span>
-									<span id="text">{date.toLocaleDateString()}</span>
+									<span id="text" class="text-sm">{date.toLocaleDateString()}</span>
 								</div>
-								<div id="info" class="flex flex-row items-center gap-1">
+								<div id="info" class="flex flex-row items-center gap-1 my-1">
 									<span id="icon"><img src={locationIcon} alt="Icon of a location pin" width="16" height="16" /></span>
-									<span id="text">{venue}</span>
+									<span id="text" class="text-sm">{venue}</span>
 								</div>
 							</section>
 							<section id="bottom" class="flex flex-col items-stretch h-[50px]">
