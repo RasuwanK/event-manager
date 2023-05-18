@@ -21,10 +21,10 @@ export const actions = {
 		const dateMatcher = /^[0-9]{4}-[0-9]{2}-[0-9]{2}$/;
 		const lettersMatcher = /^[a-zA-Z\s]+$/;
 		const numbersMatcher = /^[0-9]+$/;
-		const emailMatcher = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+		const emailMatcher = /^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/;
 		const lettersAndNumbersMatcher = /^[a-zA-Z0-9\s]+$/;
 
-		let validationErrors = {
+		const validationErrors = {
 			name: {
 				value: name ? name : '',
 				invalid: name ? !lettersAndNumbersMatcher.test(name) : true
@@ -81,14 +81,14 @@ export const actions = {
 			try {
 				await prisma.event.create({
 					data: {
-						name: name!,
-						participantLimit: parseInt(participantLimit!),
-						venue: venue!,
-						date: `${date!}T00:00:00.000Z`,
-						contactEmail: contactEmail!,
-						organizer: organizer!,
-						description: description!,
-						price: parseInt(price!)
+						name: name as string,
+						participantLimit: parseInt(participantLimit as string),
+						venue: venue as string,
+						date: `${date as string}T00:00:00.000Z`,
+						contactEmail: contactEmail as string,
+						organizer: organizer as string,
+						description: description as string,
+						price: parseInt(price as string)
 					}
 				});
 			} catch (e) {
