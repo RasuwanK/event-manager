@@ -8,7 +8,7 @@
 </script>
 
 <main class="font-display">
-	<nav id="navbar" class="flex flex-row p-4 bg-[#222222] mb-4">
+	<nav id="navbar" class="flex flex-row p-4 bg-[#222222] mb-10">
 		<ul id="links" class="flex flex-row grow gap-5">
 			<li>
 				<a href="/" class="text-[#19BAB6] font-bold text-2xl hover:underline">Home</a>
