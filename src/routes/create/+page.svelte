@@ -15,7 +15,7 @@
 </script>
 
 <div id="create-page" class="mt-4 p-2 flex flex-col items-center">
-	<div id="form-container" class="w-[800px] flex flex-col items-center gap-5">
+	<div id="form-container" class="w-[95%] md:w-[80%] lg:w-[800px] flex flex-col items-center gap-5">
 		<header>
 			<h1 class="text-4xl text-center font-bold text-[#222222]">Create your event here</h1>
 		</header>
@@ -28,7 +28,7 @@
 		</div>
 		<form
 			method="post"
-			class="p-3 w-full grid grid-cols-2 justify-items-stretch gap-x-2 gap-y-6"
+			class="p-3 w-full grid grid-cols-1 lg:grid-cols-2 justify-items-stretch gap-x-2 gap-y-6"
 			use:enhance
 		>
 			<FormCell>
