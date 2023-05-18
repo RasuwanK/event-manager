@@ -6,13 +6,7 @@
 
 	export let fullSpan: boolean = false;
 	export let isCentered: boolean = false;
-
-	function addUtility(utility: string, condition: boolean) {
-		if (condition) {
-			return utility;
-		}
-	}
-
+	
 	function addUtilities(utilities: Utility[]) {
 		let classList = '';
 		const space = ' ';
