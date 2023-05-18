@@ -15,23 +15,21 @@
 
 	function addUtilities(utilities: Utility[]) {
 		let classList = '';
-    const space = ' ';
+		const space = ' ';
 		utilities.forEach(({ className, logic }) => {
-			if(logic) classList += (className) + space;
+			if (logic) classList += className + space;
 		});
 
-    return classList;
+		return classList;
 	}
 
-const computedStyles = addUtilities([
-  {className: 'w-full', logic: !isCentered},
-  {className: 'col-span-full', logic: fullSpan},
-  {className: 'justify-self-center', logic: isCentered}
-]);
+	const computedStyles = addUtilities([
+		{ className: 'w-full', logic: !isCentered },
+		{ className: 'col-span-full', logic: fullSpan },
+		{ className: 'justify-self-center', logic: isCentered }
+	]);
 </script>
 
-<div
-	class={`cell ${computedStyles} flex flex-col`}
->
+<div class={`cell ${computedStyles} flex flex-col`}>
 	<slot />
 </div>
