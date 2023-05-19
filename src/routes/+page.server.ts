@@ -48,12 +48,13 @@ function respond(
 ) {
 	return {
 		success: true,
-		data: result.map(({ name, participantLimit, bookings, venue, addedDate, date }) => {
+		data: result.map(({ name, participantLimit, bookings, venue, addedDate, date, id }) => {
 			const recent =
 				addedDate.getFullYear() === today.getFullYear() &&
 				addedDate.getMonth() === today.getMonth() &&
 				today.getDay() - addedDate.getDay() <= 3;
 			return {
+				id,
 				bookedPrecentage: bookings ? Math.ceil(bookings / participantLimit) * 100 : 0,
 				date,
 				venue,
